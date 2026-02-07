@@ -21,6 +21,7 @@
   },
   "dependencies": {
     "nunjucks": "^3.2.4",
+    "puppeteer": "^24.37.2",
     "yaml": "^2.8.2"
   }
 }
