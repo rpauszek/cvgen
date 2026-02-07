@@ -1,0 +1,104 @@
+name: Taylor Smith
+tagline: Scientific Software Engineer
+contact:
+  email:
+    display: taylor.smith@example.com
+    icon: email
+  phone:
+    display: "+1 (555) 987-6543"
+    icon: mobile
+  location:
+    display: Example City, State
+    icon: pin
+  website:
+    display: "taylorsmith.dev"
+    link: "https://taylorsmith.dev"
+    icon: web
+  linkedin:
+    display: "taylorsmith"
+    link: "https://linkedin.com/in/taylorsmith"
+    icon: linkedin
+  github:
+    display: "taylorsmith"
+    link: "https://github.com/taylorsmith"
+    icon: github
+
+summary: >
+  Scientific software engineer specializing in biophysics and bioinformatics,
+  with experience in microscopy and spectroscopy data analysis, computational modeling,
+  and open-source scientific software. Skilled in mentoring teams, leading collaborative
+  projects, and developing robust, reproducible pipelines for biological research.
+
+education:
+  - degree: Ph.D., Biophysics
+    institution: Example University
+    location: Example City
+    dates: 2011-2017
+
+  - degree: B.S., Biochemistry
+    institution: Example University
+    location: Example City
+    dates: 2008-2011
+
+experience:
+  - title: Lead Scientific Software Engineer
+    company: Example Bioinformatics Lab
+    location: Remote
+    dates: 2020-Present
+    bullets:
+      - >
+        Led the end-to-end development of robust, open-source Python libraries
+        for microscopy and spectroscopy data analysis, spanning raw data
+        ingestion, signal processing, statistical modeling, and visualization,
+        with a strong emphasis on reproducibility, performance optimization,
+        and maintainability to support large-scale, high-throughput
+        experimental workflows used daily by interdisciplinary research teams.
+      - Lead development of open-source Python libraries for microscopy and spectroscopy analysis.
+      - Designed reproducible pipelines for high-throughput experimental datasets.
+      - Mentored a team of junior developers and research interns in computational biology tools.
+      - Collaborated with biologists to integrate software pipelines into laboratory workflows.
+      - Established coding standards, testing, and CI/CD for bioinformatics projects.
+
+  - title: Scientific Software Engineer
+    company: Advanced Imaging and Bioanalytics Company
+    location: Example City
+    dates: 2017-2020
+    bullets:
+      - Built software for real-time microscopy image acquisition and spectral analysis.
+      - Developed interactive dashboards for visualization of bioinformatics and experimental data.
+      - Contributed to open-source scientific analysis projects, including bioimaging libraries.
+      - Provided workshops and training sessions on computational tools for researchers.
+
+  - title: Research Associate
+    company: National Institute for Molecular Imaging
+    location: Example City
+    dates: 2012-2017
+    bullets:
+      - Automated processing and analysis of microscopy and spectroscopy datasets.
+      - Assisted in integration of computational models with experimental workflows.
+      - Contributed example notebooks and documentation to internal bioinformatics libraries.
+
+skills:
+  - category: Programming Languages
+    items:
+      - Python
+      - C++
+      - JavaScript / TypeScript
+      - SQL
+
+  - category: Scientific & Bioinformatics Tools
+    items:
+      - Microscopy Image Processing
+      - Spectroscopy Data Analysis
+      - Bioinformatics Pipelines
+      - NumPy / SciPy / Pandas
+      - Matplotlib / Seaborn / Plotly
+      - Jupyter
+
+  - category: Data Engineering & Software
+    items:
+      - Apache Airflow / Dask
+      - Docker / Kubernetes
+      - Cloud platforms (AWS / GCP)
+      - CI/CD (GitHub Actions, Jenkins)
+      - Git / GitHub
