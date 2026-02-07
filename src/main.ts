@@ -4,8 +4,9 @@ import path from "path";
 import fs from "fs";
 import YAML from "yaml";
 import something from "@render/test";
+import { CvData } from "types";
 
-export function loadCvYaml<T>(cvPath: string): T {
+export function loadCvYaml(cvPath: string): CvData {
   const file = fs.readFileSync(cvPath, "utf-8");
   return YAML.parse(file);
 }

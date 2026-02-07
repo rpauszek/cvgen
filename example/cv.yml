@@ -44,7 +44,8 @@ experience:
   - title: Lead Scientific Software Engineer
     company: Example Bioinformatics Lab
     location: Remote
-    dates: 2020-Present
+    dates:
+      start: 2020
     bullets:
       - >
         Led the end-to-end development of robust, open-source Python libraries
@@ -62,7 +63,9 @@ experience:
   - title: Scientific Software Engineer
     company: Advanced Imaging and Bioanalytics Company
     location: Example City
-    dates: 2017-2020
+    dates:
+      start: 2017
+      end: 2020
     bullets:
       - Built software for real-time microscopy image acquisition and spectral analysis.
       - Developed interactive dashboards for visualization of bioinformatics and experimental data.
@@ -72,7 +75,9 @@ experience:
   - title: Research Associate
     company: National Institute for Molecular Imaging
     location: Example City
-    dates: 2012-2017
+    dates:
+      start: 2012
+      end: 2017
     bullets:
       - Automated processing and analysis of microscopy and spectroscopy datasets.
       - Assisted in integration of computational models with experimental workflows.
