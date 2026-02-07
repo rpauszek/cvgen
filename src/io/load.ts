@@ -10,5 +10,25 @@ export function loadCvYaml(cvPath: string): CvData {
 
 export function loadSvg(name: string): string {
   const iconsPath = path.resolve(__dirname, "../icons");
-  return fs.readFileSync(path.join(iconsPath, `${name}.svg`), "utf-8");
+  let svg = fs.readFileSync(path.join(iconsPath, `${name}.svg`), "utf-8");
+
+  return (
+    svg
+      // Remove XML header
+      .replace(/<\?xml.*?\?>\s*/g, "")
+      // Remove comments
+      .replace(/<!--[\s\S]*?-->/g, "")
+      // Remove width/height attributes
+      .replace(/\s(width|height)="[^"]*"/g, "")
+      // Remove inline fill styles
+      .replace(/fill="[^"]*"/g, 'fill="currentColor"')
+      .replace(/style="[^"]*"/g, "")
+      .replace(/stroke="[^"]*"/g, 'stroke="currentColor"')
+      .replace(/<svg/, '<svg fill="currentColor"')
+  );
+}
+
+export function loadCss(name: string): string {
+  const stylesPath = path.resolve(__dirname, "../styles");
+  return fs.readFileSync(path.join(stylesPath, `${name}.css`), "utf-8");
 }

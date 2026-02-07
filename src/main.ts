@@ -1,16 +1,13 @@
 #!/usr/bin/env node
 import nunjucks from "nunjucks";
 import path from "path";
-import { loadCvYaml, loadSvg } from "@io/load";
+import { loadCvYaml, loadSvg, loadCss } from "@io/load";
 import { generatePdf } from "@io/generate";
 
 async function main() {
   const examplePath = path.resolve(__dirname, "../example/cv.yml");
   const outputPath = path.resolve(__dirname, "../output/cv.pdf");
   console.log(examplePath);
-
-  const g = loadSvg("github");
-  console.log(g);
 
   const data = loadCvYaml(examplePath);
   // console.log(data);
@@ -22,6 +19,9 @@ async function main() {
   env.addGlobal("svg", (name: string) => {
     return new nunjucks.runtime.SafeString(loadSvg(name));
   });
+  env.addGlobal("inlineCss", () => {
+    return new nunjucks.runtime.SafeString(loadCss("main"));
+  });
 
   const html = nunjucks.render("hello.njk", {
     title: "Hello Test",
@@ -29,7 +29,7 @@ async function main() {
     subtitle: "CV Generator in Progress",
   });
 
-  // console.log(html);
+  console.log(html);
 
   await generatePdf(html, outputPath);
 }
