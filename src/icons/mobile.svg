@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="200"
+   height="200"
+   viewBox="0 0 52.916665 52.916666"
+   version="1.1"
+   id="svg1"
+   inkscape:export-filename="linkedin.svg"
+   inkscape:export-xdpi="96"
+   inkscape:export-ydpi="96"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#cccccc"
+     borderopacity="1"
+     inkscape:showpageshadow="0"
+     inkscape:pageopacity="1"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     inkscape:zoom="3.76"
+     inkscape:cx="99.867021"
+     inkscape:cy="100"
+     inkscape:window-width="1712"
+     inkscape:window-height="971"
+     inkscape:window-x="0"
+     inkscape:window-y="39"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1">
+    <inkscape:page
+       x="0"
+       y="0"
+       width="52.916664"
+       height="52.916664"
+       id="page2"
+       margin="0"
+       bleed="0" />
+  </sodipodi:namedview>
+  <defs
+     id="defs1" />
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <path
+      
+       d="m 15.848698,52.79118 c -2.46408,-0.557144 -4.30521,-2.240944 -5.03846,-4.607894 l -0.24049,-0.776318 V 26.394711 5.3824536 l 0.28799,-0.850271 c 0.67973,-2.00685 2.16444,-3.499668 4.23172,-4.25483603 L 15.848698,3.5680034e-6 h 10.60963 10.60964 L 37.827198,0.27734657 c 2.06728,0.75516803 3.55199,2.24798603 4.23172,4.25483603 l 0.288,0.850271 V 26.446466 47.510478 l -0.288,0.850274 c -0.67973,2.006853 -2.16444,3.499672 -4.23172,4.254845 l -0.75923,0.277334 -10.29911,0.01933 c -8.35103,0.01565 -10.41659,-0.0072 -10.92016,-0.121086 z m 11.35085,-4.2315 c 0.96583,-0.227318 1.7478,-0.926847 2.11712,-1.893889 0.22786,-0.596643 0.15627,-1.788692 -0.14198,-2.364076 -1.11726,-2.155479 -4.25088,-2.161331 -5.35112,-0.01023 -0.89384,1.747759 0.13411,3.925275 2.0289,4.297822 0.63692,0.12523 0.69343,0.123982 1.34708,-0.02987 z m 12.17182,-24.416276 -0.0262,-15.3451634 h -12.88682 -12.88683 l -0.0262,15.3451634 -0.0262,15.345156 h 12.93927 12.93926 z"
+       id="path4"
+       inkscape:export-filename="mobile.svg"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+  </g>
+</svg>

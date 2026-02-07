@@ -8,7 +8,7 @@
     "outDir": "./dist",
     "baseUrl": "./src",
     "paths": {
-      "@render/*": ["render/*"]
+      "@io/*": ["io/*"]
     },
     "strict": true,
     "types": ["node"]
