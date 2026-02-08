@@ -1,3 +1,5 @@
+{% from "components/macros.njk" import iconText %}
+
 <div class="experience">
   <h1>Professional Experience</h1>
 
@@ -6,13 +8,23 @@
 
       <div class="job-header">
         <div class="title">{{ job.title }}</div>
-        <div class="company">{{ job.company }}</div>
 
-        <div class="job-meta">
-          <div class="dates">{{ job.dates }}</div>
-          {% if job.location %}
-            <div class="location">{{ job.location }}</div>
-          {% endif %}
+        <div class="job-info">
+          <div class="job-info-left">
+            <div class="icon-text">
+              {{ iconText('pin', job.company) }}
+            </div>
+            <span class="separator">|</span>
+            <div class="icon-text">
+              <span>{{ job.location }}</span>
+            </div>
+          </div>
+
+          <div class="job-info-right">
+            <div class="icon-text">
+              {{ iconText('calendar', job.dates) }}
+            </div>
+          </div>
         </div>
       </div>
 

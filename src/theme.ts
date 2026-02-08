@@ -7,7 +7,7 @@ export const themes: Record<string, Theme> = {
     colors: {
       "color-bg": "#ffffff",
       "color-text": "#111111",
-      "color-muted": "#666666",
+      "color-muted": "#8a8a8a",
       "color-accent": "#2b6cb0",
       "color-summary-bg": "#c7daf5",
       "color-summary-text": "#111111"
