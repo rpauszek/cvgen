@@ -1,3 +1,5 @@
+{% from "components/macros.njk" import iconText %}
+
 {% if skills and skills.length %}
   <div class="skills">
     {% for group in skills %}
@@ -9,14 +11,7 @@
         <div class="skill-items">
           {% for item in group.items %}
             <div class="skill-item">
-              {% if item.icon %}
-                <span class="icon">
-                  {{ svg(item.icon) | safe }}
-                </span>
-              {% endif %}
-              <span class="skill-label">
-                {{ item.label }}
-              </span>
+                {{ iconText(item.icon, item.label, null, "skill-label") }}
             </div>
           {% endfor %}
         </div>

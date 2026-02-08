@@ -1,0 +1,13 @@
+{% macro iconText(icon, text, link=null, textClass="") %}
+  {% if icon %}
+    <span class="icon">
+      {{ svg(icon) | safe }}
+    </span>
+  {% endif %}
+
+  {% if link %}
+    <a href="{{ link }}" class="{{ textClass }}">{{ text }}</a>
+  {% else %}
+    <span class="{{ textClass }}">{{ text }}</span>
+  {% endif %}
+{% endmacro %}
