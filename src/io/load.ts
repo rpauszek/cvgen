@@ -28,7 +28,12 @@ export function loadSvg(name: string): string {
   );
 }
 
-export function loadCss(name: string): string {
+export function loadCssFiles(names: string[]): string {
   const stylesPath = path.resolve(__dirname, "../styles");
-  return fs.readFileSync(path.join(stylesPath, `${name}.css`), "utf-8");
+  return names
+    .map((file) => {
+      const fullPath = path.join(stylesPath, `${file}.css`);
+      return fs.readFileSync(fullPath, "utf-8");
+    })
+    .join("\n\n");
 }

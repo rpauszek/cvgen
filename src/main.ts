@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 import nunjucks from "nunjucks";
 import path from "path";
-import { loadCvYaml, loadSvg, loadCss } from "@io/load";
+import { loadCvYaml, loadSvg, loadCssFiles } from "@io/load";
 import { generatePdf, saveHtmlDebug } from "@io/generate";
 
 async function main() {
@@ -11,7 +11,7 @@ async function main() {
   console.log(examplePath);
 
   const data = loadCvYaml(examplePath);
-  // console.log(data);
+  const css = loadCssFiles(["setup", "main"]);
 
   const templatePath = path.resolve(__dirname, "./templates");
   const env = nunjucks.configure(templatePath, {
@@ -20,11 +20,8 @@ async function main() {
   env.addGlobal("svg", (name: string) => {
     return new nunjucks.runtime.SafeString(loadSvg(name));
   });
-  env.addGlobal("inlineCss", () => {
-    return new nunjucks.runtime.SafeString(loadCss("main"));
-  });
 
-  const html = nunjucks.render("hello.njk", { ...data });
+  const html = nunjucks.render("hello.njk", { ...data, styles: css });
 
   saveHtmlDebug(html, outputPathHtml);
   await generatePdf(html, outputPath);
