@@ -24,11 +24,7 @@ async function main() {
     return new nunjucks.runtime.SafeString(loadCss("main"));
   });
 
-  const html = nunjucks.render("hello.njk", {
-    name: data.name,
-    tagline: data.tagline,
-    contact: data.contact,
-  });
+  const html = nunjucks.render("hello.njk", { ...data });
 
   saveHtmlDebug(html, outputPathHtml);
   await generatePdf(html, outputPath);
