@@ -1,0 +1,23 @@
+<div class="education">
+
+  {% for edu in education %}
+    <div class="edu">
+
+      <div class="edu-header">
+        <div class="edu-title">
+          <div class="degree">{{ edu.degree }}</div>
+          <div class="institution">{{ edu.institution }}</div>
+        </div>
+
+        <div class="edu-meta">
+          <div class="dates">{{ edu.dates }}</div>
+          {% if edu.location %}
+            <div class="location">{{ edu.location }}</div>
+          {% endif %}
+        </div>
+      </div>
+
+    </div>
+  {% endfor %}
+
+</div>

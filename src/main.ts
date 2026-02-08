@@ -31,6 +31,10 @@ async function main() {
       ...job,
       dates: formatDates(job.dates),
     })),
+    education: data.education?.map((edu) => ({
+      ...edu,
+      dates: formatDates(edu.dates)
+    })),
     styles: css,
   });
 

@@ -34,12 +34,16 @@ education:
   - degree: Ph.D., Biophysics
     institution: Example University
     location: Example City
-    dates: 2011-2017
+    dates:
+      start: 2011
+      end: 2017
 
   - degree: B.S., Biochemistry
     institution: Example University
     location: Example City
-    dates: 2008-2011
+    dates:
+      start: 2008
+      end: 2011
 
 experience:
   - title: Lead Scientific Software Engineer
