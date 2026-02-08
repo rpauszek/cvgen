@@ -4,6 +4,7 @@ import path from "path";
 import { loadCvYaml, loadSvg, loadCssFiles, getSkillIconName } from "@io/load";
 import { generatePdf, saveHtmlDebug } from "@io/generate";
 import { SkillsCategory } from "types";
+import { themes, themeToCss } from "theme";
 
 function formatDates(dates: { start: string | number; end?: string | number }) {
   return dates.end ? `${dates.start}–${dates.end}` : `${dates.start}–Present`;
@@ -27,7 +28,10 @@ async function main() {
   console.log(examplePath);
 
   const data = loadCvYaml(examplePath);
-  const css = loadCssFiles(["setup", "main"]);
+
+  const selectedTheme = themes["classic"]; // todo: use command line arg
+  const themeCss = themeToCss(selectedTheme);
+  const css = [themeCss, loadCssFiles(["setup", "main"])].join("\n");
 
   const templatePath = path.resolve(__dirname, "./templates");
   const env = nunjucks.configure(templatePath, {
