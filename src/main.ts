@@ -1,33 +1,55 @@
 #!/usr/bin/env node
 import nunjucks from "nunjucks";
-import path from "path";
+import path from "node:path";
+import fs from "node:fs";
 import { loadCvYaml, loadSvg, loadCssFiles, getSkillIconName } from "@io/load";
 import { generatePdf, saveHtmlDebug } from "@io/generate";
 import { SkillsCategory } from "types";
 import { themes, themeToCss } from "theme";
+
+function resolveInputPath(): string {
+  const examplePath = path.resolve(__dirname, "../example/cv.yml");
+  const args = process.argv.slice(2);
+
+  if (args.length === 0) {
+    console.warn("No input provided. Using example file.");
+    return examplePath;
+  }
+
+  const inputPath = path.resolve(args[0]);
+
+  if (!fs.existsSync(inputPath)) {
+    console.warn(`File not found: ${inputPath}`);
+    console.warn("Falling back to example file.");
+    return examplePath;
+  }
+
+  return inputPath;
+}
 
 function formatDates(dates: { start: string | number; end?: string | number }) {
   return dates.end ? `${dates.start}–${dates.end}` : `${dates.start}–Present`;
 }
 
 function enrichSkills(skills: SkillsCategory[]) {
-  return skills.map(group => ({
+  return skills.map((group) => ({
     ...group,
-    items: group.items.map(item => ({
+    items: group.items.map((item) => ({
       label: item,
       icon: group.useIcons ? getSkillIconName(item) : undefined,
     })),
   }));
 }
 
-
 async function main() {
-  const examplePath = path.resolve(__dirname, "../example/cv.yml");
+  console.log(process.argv);
+
   const outputPathHtml = path.resolve(__dirname, "../output/cv.html");
   const outputPath = path.resolve(__dirname, "../output/cv.pdf");
-  console.log(examplePath);
 
-  const data = loadCvYaml(examplePath);
+  const inputPath = resolveInputPath();
+  console.log("Using input:", inputPath);
+  const data = loadCvYaml(inputPath);
 
   const selectedTheme = themes["classic"]; // todo: use command line arg
   const themeCss = themeToCss(selectedTheme);
@@ -49,7 +71,7 @@ async function main() {
     })),
     education: data.education?.map((edu) => ({
       ...edu,
-      dates: formatDates(edu.dates)
+      dates: formatDates(edu.dates),
     })),
     skills: enrichSkills(data.skills),
     styles: css,
