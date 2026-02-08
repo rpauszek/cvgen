@@ -1,0 +1,19 @@
+{% if skills and skills.length %}
+  <div class="skills">
+    {% for skillGroup in skills %}
+      <div class="skill-group">
+        <div class="skill-category">
+          {{ skillGroup.category }}
+        </div>
+
+        <div class="skill-items">
+          {% for item in skillGroup.items %}
+            <div class="skill-item">
+              {{ item }}
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+{% endif %}
