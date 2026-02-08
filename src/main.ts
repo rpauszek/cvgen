@@ -51,7 +51,7 @@ async function main() {
   console.log("Using input:", inputPath);
   const data = loadCvYaml(inputPath);
 
-  const selectedTheme = themes["classic"]; // todo: use command line arg
+  const selectedTheme = themes["tech-duo"]; // todo: use command line arg
   const themeCss = themeToCss(selectedTheme);
   const css = [themeCss, loadCssFiles(["setup", "main"])].join("\n");
 
