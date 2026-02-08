@@ -39,14 +39,24 @@ export function loadCssFiles(names: string[]): string {
 }
 
 const SKILL_ICON_MAP: Record<string, string> = {
-  Python: "python",
-  "C++": "cpp",
-  TypeScript: "typescript",
-  JavaScript: "javascript",
-  Rust: "rust",
+  "c++": "cpp",
+  "qml": "qt",
 };
 
 export function getSkillIconName(skill: string): string | undefined {
-  // todo: determine what to do if icon missing; now just nothing added
-  return SKILL_ICON_MAP[skill];
+  const normalized = skill.toLowerCase();
+
+  // check if special case
+  const iconName = SKILL_ICON_MAP[normalized] ?? normalized;
+
+  // check if file exists
+  const ICONS_DIR = path.resolve(__dirname, "../icons");
+  const iconPath = path.join(ICONS_DIR, `${iconName}.svg`);
+  if (fs.existsSync(iconPath)) {
+    return iconName;
+  }
+
+  // file doesn't exist, no icon
+  return undefined;
 }
+
