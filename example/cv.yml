@@ -3,6 +3,7 @@ tagline: Scientific Software Engineer
 contact:
   - type: email
     display: taylor.smith@example.com
+    link: "email://taylor.smith@example.com"
     icon: email
   - type: phone
     display: "+1 (555) 987-6543"
