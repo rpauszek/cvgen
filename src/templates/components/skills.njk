@@ -9,13 +9,23 @@
           {{ group.category }}
         </h2>
 
-        <div class="skill-items">
-          {% for item in group.items %}
-            <div class="skill-item">
+        {% if group.useIcons %}
+          <div class="skill-items">
+            {% for item in group.items %}
+              <div class="skill-item">
                 {{ iconText(item.icon, item.label, null, "skill-label") }}
-            </div>
-          {% endfor %}
-        </div>
+              </div>
+            {% endfor %}
+          </div>
+        {% else %}
+          <div class="skill-list-column">
+            {% for item in group.items %}
+              <div class="skill-list-item">
+                {{ item.label }}
+              </div>
+            {% endfor %}
+          </div>
+        {% endif %}
       </div>
     {% endfor %}
   </div>

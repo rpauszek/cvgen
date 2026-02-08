@@ -47,7 +47,7 @@ export const themes: Record<string, Theme> = {
     colors: {
       "color-bg": "#f0f4f8",
       "color-text": "#1a202c",
-      "color-muted": "#ff7f50",
+      "color-muted": "#f1531a",
       "color-accent": "#3182ce",
       "color-summary-bg": "#bee3f8",
       "color-summary-text": "#1a202c",
