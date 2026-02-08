@@ -1,0 +1,33 @@
+<div class="experience">
+
+  {% for job in experience %}
+    <div class="job">
+
+      <div class="job-header">
+        <div class="job-title">
+          <div class="title">{{ job.title }}</div>
+          <div class="company">{{ job.company }}</div>
+        </div>
+
+        <div class="job-meta">
+          <div class="dates">{{ job.dates }}</div>
+          {% if job.location %}
+            <div class="location">{{ job.location }}</div>
+          {% endif %}
+        </div>
+      </div>
+
+      {% if job.bullets and job.bullets.length > 0 %}
+        <ul class="job-bullets">
+          {% for bullet in job.bullets %}
+            <li class="bullet">
+              {{ bullet }}
+            </li>
+          {% endfor %}
+        </ul>
+      {% endif %}
+
+    </div>
+  {% endfor %}
+
+</div>

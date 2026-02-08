@@ -4,6 +4,10 @@ import path from "path";
 import { loadCvYaml, loadSvg, loadCssFiles } from "@io/load";
 import { generatePdf, saveHtmlDebug } from "@io/generate";
 
+function formatDates(dates: { start: string | number; end?: string | number }) {
+  return dates.end ? `${dates.start}–${dates.end}` : `${dates.start}–Present`;
+}
+
 async function main() {
   const examplePath = path.resolve(__dirname, "../example/cv.yml");
   const outputPathHtml = path.resolve(__dirname, "../output/cv.html");
@@ -21,7 +25,14 @@ async function main() {
     return new nunjucks.runtime.SafeString(loadSvg(name));
   });
 
-  const html = nunjucks.render("hello.njk", { ...data, styles: css });
+  const html = nunjucks.render("hello.njk", {
+    ...data,
+    experience: data.experience?.map((job) => ({
+      ...job,
+      dates: formatDates(job.dates),
+    })),
+    styles: css,
+  });
 
   saveHtmlDebug(html, outputPathHtml);
   await generatePdf(html, outputPath);
