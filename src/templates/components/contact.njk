@@ -1,6 +1,6 @@
 {% from "components/macros.njk" import iconText %}
 
-<div class="contact">
+<div class="contact block">
   {% for item in contact %}
     <div class="contact-item">
       {{ iconText(item.icon, item.display, item.link) }}

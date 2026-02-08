@@ -1,13 +1,12 @@
 <div class="experience">
+  <h1>Professional Experience</h1>
 
   {% for job in experience %}
-    <div class="job">
+    <div class="job block">
 
       <div class="job-header">
-        <div class="job-title">
-          <div class="title">{{ job.title }}</div>
-          <div class="company">{{ job.company }}</div>
-        </div>
+        <div class="title">{{ job.title }}</div>
+        <div class="company">{{ job.company }}</div>
 
         <div class="job-meta">
           <div class="dates">{{ job.dates }}</div>

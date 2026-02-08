@@ -1,10 +1,23 @@
 .sidebar {
-  width: 170px;
+  width: 190px;
   height: 1040px;
   float: left;
   box-sizing: border-box;
   margin-right: 20px;
+  padding-right: 20px;
+  border-right: solid 1px #00ff00;
   background-color: rgba(127, 255, 212, 0.2);
+}
+
+.block {
+  border: 1px solid black;
+  margin-bottom: 10px;
+}
+
+.block .title {
+  font-size: 12pt;
+  font-weight: 700;
+  margin-bottom: 5px;
 }
 
 .icon {
@@ -29,6 +42,16 @@
   gap: 0.4rem;
 }
 
+h1 {
+  font-size: 12pt;
+  font-weight: 900;
+}
+
+h2 {
+  font-size: 10pt;
+  font-weight: 600;
+}
+
 .header {
   background-color: #f09090;
   margin-bottom: 20px;
@@ -47,4 +70,13 @@
     font-weight: 600;
     border-left: solid 1px #00ff00;
     padding-left: 5px;
+}
+
+.summary {
+  background-color: goldenrod;
+  border-width: 0px;
+  border-radius: 12px;
+  margin-left: 210px;
+  margin-right: 2px;
+  padding: 12px;
 }

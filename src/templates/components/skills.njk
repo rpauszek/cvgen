@@ -2,11 +2,12 @@
 
 {% if skills and skills.length %}
   <div class="skills">
+    <h1>Skills</h1>
     {% for group in skills %}
-      <div class="skill-group">
-        <div class="skill-category">
+      <div class="skill-group block">
+        <h2 class="skill-category">
           {{ group.category }}
-        </div>
+        </h2>
 
         <div class="skill-items">
           {% for item in group.items %}
