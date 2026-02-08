@@ -1,15 +1,22 @@
 {% if skills and skills.length %}
   <div class="skills">
-    {% for skillGroup in skills %}
+    {% for group in skills %}
       <div class="skill-group">
         <div class="skill-category">
-          {{ skillGroup.category }}
+          {{ group.category }}
         </div>
 
         <div class="skill-items">
-          {% for item in skillGroup.items %}
+          {% for item in group.items %}
             <div class="skill-item">
-              {{ item }}
+              {% if item.icon %}
+                <span class="icon">
+                  {{ svg(item.icon) | safe }}
+                </span>
+              {% endif %}
+              <span class="skill-label">
+                {{ item.label }}
+              </span>
             </div>
           {% endfor %}
         </div>

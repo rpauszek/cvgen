@@ -90,11 +90,13 @@ experience:
 
 skills:
   - category: Programming Languages
+    useIcons: true
     items:
       - Python
       - C++
-      - JavaScript / TypeScript
-      - SQL
+      - TypeScript
+      - JavaScript
+      - Rust
 
   - category: Scientific & Bioinformatics Tools
     items:

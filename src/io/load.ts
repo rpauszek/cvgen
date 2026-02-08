@@ -37,3 +37,16 @@ export function loadCssFiles(names: string[]): string {
     })
     .join("\n\n");
 }
+
+const SKILL_ICON_MAP: Record<string, string> = {
+  Python: "python",
+  "C++": "cpp",
+  TypeScript: "typescript",
+  JavaScript: "javascript",
+  Rust: "rust",
+};
+
+export function getSkillIconName(skill: string): string | undefined {
+  // todo: determine what to do if icon missing; now just nothing added
+  return SKILL_ICON_MAP[skill];
+}

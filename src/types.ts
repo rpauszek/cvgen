@@ -25,8 +25,9 @@ interface Job {
   bullets?: string[];
 }
 
-interface SkillsCategory {
+export interface SkillsCategory {
   category: string;
+  useIcons?: boolean;
   items: string[];
 }
 

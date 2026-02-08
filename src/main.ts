@@ -1,12 +1,24 @@
 #!/usr/bin/env node
 import nunjucks from "nunjucks";
 import path from "path";
-import { loadCvYaml, loadSvg, loadCssFiles } from "@io/load";
+import { loadCvYaml, loadSvg, loadCssFiles, getSkillIconName } from "@io/load";
 import { generatePdf, saveHtmlDebug } from "@io/generate";
+import { SkillsCategory } from "types";
 
 function formatDates(dates: { start: string | number; end?: string | number }) {
   return dates.end ? `${dates.start}–${dates.end}` : `${dates.start}–Present`;
 }
+
+function enrichSkills(skills: SkillsCategory[]) {
+  return skills.map(group => ({
+    ...group,
+    items: group.items.map(item => ({
+      label: item,
+      icon: group.useIcons ? getSkillIconName(item) : undefined,
+    })),
+  }));
+}
+
 
 async function main() {
   const examplePath = path.resolve(__dirname, "../example/cv.yml");
@@ -35,6 +47,7 @@ async function main() {
       ...edu,
       dates: formatDates(edu.dates)
     })),
+    skills: enrichSkills(data.skills),
     styles: css,
   });
 
