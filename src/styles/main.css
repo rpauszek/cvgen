@@ -1,5 +1,5 @@
 .sidebar {
-  width: 250px;
+  width: 170px;
   height: 1040px;
   float: left;
   box-sizing: border-box;
@@ -29,3 +29,22 @@
   gap: 0.4rem;
 }
 
+.header {
+  background-color: #f09090;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.name {
+  font-size: 32pt;
+  font-weight: 900;
+}
+
+.tagline {
+    font-size: 18pt;
+    font-weight: 600;
+    border-left: solid 1px #00ff00;
+    padding-left: 5px;
+}
