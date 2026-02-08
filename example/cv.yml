@@ -1,24 +1,24 @@
 name: Taylor Smith
 tagline: Scientific Software Engineer
 contact:
-  email:
+  - type: email
     display: taylor.smith@example.com
     icon: email
-  phone:
+  - type: phone
     display: "+1 (555) 987-6543"
     icon: mobile
-  location:
+  - type: location
     display: Example City, State
     icon: pin
-  website:
+  - type: website
     display: "taylorsmith.dev"
     link: "https://taylorsmith.dev"
     icon: web
-  linkedin:
+  - type: linkedin
     display: "taylorsmith"
     link: "https://linkedin.com/in/taylorsmith"
     icon: linkedin
-  github:
+  - type: github
     display: "taylorsmith"
     link: "https://github.com/taylorsmith"
     icon: github

@@ -2,10 +2,11 @@
 import nunjucks from "nunjucks";
 import path from "path";
 import { loadCvYaml, loadSvg, loadCss } from "@io/load";
-import { generatePdf } from "@io/generate";
+import { generatePdf, saveHtmlDebug } from "@io/generate";
 
 async function main() {
   const examplePath = path.resolve(__dirname, "../example/cv.yml");
+  const outputPathHtml = path.resolve(__dirname, "../output/cv.html");
   const outputPath = path.resolve(__dirname, "../output/cv.pdf");
   console.log(examplePath);
 
@@ -27,10 +28,10 @@ async function main() {
     title: "Hello Test",
     name: "Ray",
     subtitle: "CV Generator in Progress",
+    contact: data.contact,
   });
 
-  console.log(html);
-
+  saveHtmlDebug(html, outputPathHtml);
   await generatePdf(html, outputPath);
 }
 

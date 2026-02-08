@@ -1,4 +1,10 @@
 import puppeteer from "puppeteer";
+import fs from "fs";
+
+export function saveHtmlDebug(html: string, outputPath: string) {
+  fs.writeFileSync(outputPath, html, "utf-8");
+  console.log(`Saved debug HTML to ${outputPath}`);
+}
 
 export async function generatePdf(htmlContent: string, outputPath: string): Promise<void> {
   const browser = await puppeteer.launch();

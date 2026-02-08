@@ -1,16 +1,8 @@
 interface ContactItem {
-    display: string;
-    icon: string;
-    link?: string;
-}
-
-interface Contact {
-    email: ContactItem;
-    phone: ContactItem;
-    location?: ContactItem;
-    website?: ContactItem;
-    linkedin?: ContactItem;
-    github?: ContactItem;
+  type: "email | phone | location | website | linkedin | github | gitlab ";
+  display: string;
+  icon: string;
+  link?: string;
 }
 
 interface Dates {
@@ -19,10 +11,10 @@ interface Dates {
 }
 
 interface Education {
-    degree: string;
-    institution: string;
-    location: string;
-    dates: Dates;
+  degree: string;
+  institution: string;
+  location: string;
+  dates: Dates;
 }
 
 interface Job {
@@ -34,14 +26,14 @@ interface Job {
 }
 
 interface SkillsCategory {
-    category: string;
-    items: string[];
+  category: string;
+  items: string[];
 }
 
 export interface CvData {
   name: string;
   tagline?: string;
-  contact: Contact;
+  contact: ContactItem[];
   summary?: string;
   education: Education[];
   experience: Job[];

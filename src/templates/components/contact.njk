@@ -1,0 +1,13 @@
+<div class="contact">
+  {% for item in contact %}
+    <div class="contact-item">
+      <span class="icon">{{ svg(item.icon) }}</span>
+
+      {% if item.link %}
+        <a href="{{ item.link }}">{{ item.display }}</a>
+      {% else %}
+        <span>{{ item.display }}</span>
+      {% endif %}
+    </div>
+  {% endfor %}
+</div>
