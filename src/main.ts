@@ -37,7 +37,7 @@ async function main() {
     return new nunjucks.runtime.SafeString(loadSvg(name));
   });
 
-  const html = nunjucks.render("hello.njk", {
+  const html = nunjucks.render("template.njk", {
     ...data,
     experience: data.experience?.map((job) => ({
       ...job,
