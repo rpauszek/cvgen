@@ -25,9 +25,8 @@ async function main() {
   });
 
   const html = nunjucks.render("hello.njk", {
-    title: "Hello Test",
-    name: "Ray",
-    subtitle: "CV Generator in Progress",
+    name: data.name,
+    tagline: data.tagline,
     contact: data.contact,
   });
 

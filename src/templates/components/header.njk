@@ -1,4 +1,7 @@
 <div class="header">
-  <h1>{{ name }}</h1>
-  <p>{{ subtitle }}</p>
+  <div class="name">{{ name }}</div>
+  {% if tagline %}
+    <div class="tagline">{{ tagline }}</div>
+  {% endif %}
+
 </div>
